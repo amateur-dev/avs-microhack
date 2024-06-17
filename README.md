@@ -316,3 +316,5 @@ This circuit encapsulates the logic for verifying an auditor's qualifications an
 - **Complexity:** Designing and implementing ZKP circuits and coordinating the verification process across multiple reviewers can be complex.
 - **Performance:** ZKP generation and verification can be computationally intensive, requiring optimizations for scalability.
 - **Incentive Alignment:** Ensuring that ZKP Reviewers are incentivized to participate honestly and accurately is crucial. This could involve rewards (tokens, reputation) or penalties for incorrect verifications.
+
+![alt text](./diagrams/extended_design.png)
