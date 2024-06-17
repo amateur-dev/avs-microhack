@@ -30,6 +30,7 @@ interface ISourcingBestAuditorTaskManager {
         bytes quorumNumbers;
         uint32 quorumThresholdPercentage;
         Bid[] bids;
+        uint32 taskCreatedBlock;
     }
 
     struct Bid {

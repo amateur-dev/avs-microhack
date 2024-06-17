@@ -2,6 +2,7 @@
 pragma solidity ^0.8.12;
 
 import "../src/SourcingBestAuditorServiceManager.sol" as incsqsm;
+import {ISourcingBestAuditorTaskManager} from "../src/ISourcingBestAuditorTaskManager.sol";
 import {SourcingBestAuditorTaskManager} from "../src/SourcingBestAuditorTaskManager.sol";
 import {BLSMockAVSDeployer} from "@eigenlayer-middleware/test/utils/BLSMockAVSDeployer.sol";
 import {TransparentUpgradeableProxy} from "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
@@ -56,7 +57,7 @@ contract SourcingBestAuditorTaskManagerTest is BLSMockAVSDeployer {
         bytes memory quorumNumbers = new bytes(0);
         SourcingBestAuditorTaskManager.Bid[]
             memory bids = new SourcingBestAuditorTaskManager.Bid[](1);
-        bids[0] = SourcingBestAuditorTaskManager.Bid({
+        bids[0] = ISourcingBestAuditorTaskManager.Bid({
             bidId: 1,
             zkp: "zkp_example",  //@TODO: @akshatamohanty
             bidPitchDocURI: "uri_example"

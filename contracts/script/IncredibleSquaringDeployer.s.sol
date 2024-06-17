@@ -18,9 +18,9 @@ import {IndexRegistry} from "@eigenlayer-middleware/src/IndexRegistry.sol";
 import {StakeRegistry} from "@eigenlayer-middleware/src/StakeRegistry.sol";
 import "@eigenlayer-middleware/src/OperatorStateRetriever.sol";
 
-import {IncredibleSquaringServiceManager, IServiceManager} from "../src/IncredibleSquaringServiceManager.sol";
-import {IncredibleSquaringTaskManager} from "../src/IncredibleSquaringTaskManager.sol";
-import {IIncredibleSquaringTaskManager} from "../src/IIncredibleSquaringTaskManager.sol";
+import {SourcingBestAuditorServiceManager, IServiceManager} from "../src/SourcingBestAuditorServiceManager.sol";
+import {SourcingBestAuditorTaskManager} from "../src/SourcingBestAuditorTaskManager.sol";
+import {ISourcingBestAuditorTaskManager} from "../src/ISourcingBestAuditorTaskManager.sol";
 import "../src/ERC20Mock.sol";
 
 import {Utils} from "./utils/Utils.sol";
@@ -66,11 +66,11 @@ contract IncredibleSquaringDeployer is Script, Utils {
 
     OperatorStateRetriever public operatorStateRetriever;
 
-    IncredibleSquaringServiceManager public incredibleSquaringServiceManager;
+    SourcingBestAuditorServiceManager public incredibleSquaringServiceManager;
     IServiceManager public incredibleSquaringServiceManagerImplementation;
 
-    IncredibleSquaringTaskManager public incredibleSquaringTaskManager;
-    IIncredibleSquaringTaskManager
+    SourcingBestAuditorTaskManager public incredibleSquaringTaskManager;
+    ISourcingBestAuditorTaskManager
         public incredibleSquaringTaskManagerImplementation;
 
     function run() external {
@@ -203,7 +203,7 @@ contract IncredibleSquaringDeployer is Script, Utils {
          * First, deploy upgradeable proxy contracts that **will point** to the implementations. Since the implementation contracts are
          * not yet deployed, we give these proxies an empty contract as the initial implementation, to act as if they have no code.
          */
-        incredibleSquaringServiceManager = IncredibleSquaringServiceManager(
+        incredibleSquaringServiceManager = SourcingBestAuditorServiceManager(
             address(
                 new TransparentUpgradeableProxy(
                     address(emptyContract),
@@ -212,7 +212,7 @@ contract IncredibleSquaringDeployer is Script, Utils {
                 )
             )
         );
-        incredibleSquaringTaskManager = IncredibleSquaringTaskManager(
+        incredibleSquaringTaskManager = SourcingBestAuditorTaskManager(
             address(
                 new TransparentUpgradeableProxy(
                     address(emptyContract),
@@ -358,7 +358,7 @@ contract IncredibleSquaringDeployer is Script, Utils {
             );
         }
 
-        incredibleSquaringServiceManagerImplementation = new IncredibleSquaringServiceManager(
+        incredibleSquaringServiceManagerImplementation = new SourcingBestAuditorServiceManager(
             avsDirectory,
             registryCoordinator,
             stakeRegistry,
@@ -372,7 +372,7 @@ contract IncredibleSquaringDeployer is Script, Utils {
             address(incredibleSquaringServiceManagerImplementation)
         );
 
-        incredibleSquaringTaskManagerImplementation = new IncredibleSquaringTaskManager(
+        incredibleSquaringTaskManagerImplementation = new SourcingBestAuditorTaskManager(
             registryCoordinator,
             TASK_RESPONSE_WINDOW_BLOCK
         );

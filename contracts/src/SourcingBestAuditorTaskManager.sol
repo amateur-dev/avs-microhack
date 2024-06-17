@@ -43,7 +43,7 @@ contract SourcingBestAuditorTaskManager is
     address public aggregator;
     address public generator;
     uint256 public taskCounter;
-
+    Task tasks;
 
     /* MODIFIERS */
     modifier onlyAggregator() {
@@ -87,9 +87,10 @@ contract SourcingBestAuditorTaskManager is
         uint32 quorumThresholdPercentage,
         Bid[] calldata bids // Submitting the array of all the bids
     ) external onlyTaskGenerator {
-        taskCounter = taskCounter.add(1);
+        taskCounter = taskCounter  + 1;
 
-        Task storage newTask = tasks[taskCounter];
+        Task memory newTask;
+        newTask.taskCreatedBlock = uint32(block.number);
         newTask.taskId = taskCounter;
         newTask.budget = budgetInUSDC;
         newTask.auditJobSpecificationURI = auditJobSpecificationURI;
