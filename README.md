@@ -1,7 +1,8 @@
-# Smart Contract Auditor AVS
+# Code4Arena AVS | Open Audit Work using ZKP | Audit AVS
 
-## Project Overview
+## Overview
 
+This process leverages Zero-Knowledge Proofs (ZKPs) and decentralized verification to ensure secure and objective smart contract audits.
 This AVS is designed to facilitate secure, efficient, and transparent smart contract auditing using Zero-Knowledge Proofs (ZKPs) for bid submissions and verifications. This README provides an overview of the AVS design, outlines the roles of AVS clients, operators, aggregators and auditors, the phases of development, and the use of ZKPs to ensure a secure and fair auditing process.
 
 The AVS aims to enhance the quality of smart contract audits by:
@@ -9,7 +10,7 @@ The AVS aims to enhance the quality of smart contract audits by:
 1. ensuring a decentralized process of verifying and selecting the best auditors.
 2. enabling auditors to stake their own assets as a guarantee for their audit reports, earning better rewards.
 
-![overall-diagram](./diagrams/overall_architecture.png)
+![overall-diagram](./diagrams/zkp_audit_procedure.png)
 
 ## Key Actors
 
