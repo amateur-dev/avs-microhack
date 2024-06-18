@@ -1,62 +1,6 @@
-# Code4Arena AVS | Open Audit Work using ZKP
+# Smart Contract Auditor AVS
 
-## Overview
-This process leverages Zero-Knowledge Proofs (ZKPs) and decentralized verification to ensure secure and objective smart contract audits.
-
-### Steps
-
-1. **Request Creation**
-   - **User Input:** Smart contract repository link, budget in USDC, bid deadline, audit criteria, number of ZKP reviewers, consensus threshold.
-   - **Output:** Audit request initialized on the AVS platform.
-
-2. **Auditor Bidding**
-   - **Auditors:** Submit bids using ZKPs proving qualifications without revealing details.
-   - **Inclusion:** Digital signatures ensure authenticity and integrity.
-   - **Output:** ZKP and digital signature submitted.
-
-3. **ZKP Reviewer Selection**
-   - **Selection:** AVS randomly or reputation-based selects ZKP Reviewers from the pool.
-   - **Output:** Reviewers selected for verification.
-
-4. **ZKP Verification**
-   - **Reviewers:** Independently verify ZKPs and digital signatures.
-   - **Submission:** Results (pass/fail) and auditor nominations.
-   - **Output:** Aggregated verification results.
-
-5. **Consensus and Bid Selection**
-   - **Aggregation:** AVS aggregates verification results.
-   - **Selection:** Winning bid based on consensus.
-   - **Output:** Bid selection.
-
-6. **Funds Escrow**
-   - **Escrow:** User’s USDC payment held securely in AVS smart contract.
-   - **Output:** Funds in escrow.
-
-7. **Audit Execution**
-   - **Auditor:** Conducts comprehensive audit per criteria.
-   - **Output:** Detailed audit report.
-
-8. **Report Submission**
-   - **Auditor:** Submits audit report to AVS.
-   - **Output:** Audit report received.
-
-9. **Objective Report Verification**
-   - **Reviewers:** Independently verify report against predefined criteria.
-   - **Proof of Work:** Submission of verification process, including digital signatures.
-   - **Output:** Verification results and proof of work.
-
-10. **Payment and Funds Release**
-    - **Verification:** If report meets standards, consensus reached.
-    - **Release:** Funds released to auditor, remaining funds returned to user.
-    - **Output:** Payment processed.
-
-This structured approach ensures a secure, transparent, and objective audit process using cutting-edge cryptographic proofs and decentralized verification.
-
-![ZKP Audit Process](./diagrams/zkp_audit_process.png)
-
-**<span style="background-color: yellow;">ToDo: To add staking bond as a form of a time-based insurance bond and use it for slashing in the case of a proven hack</span>**
-
-## Current Hackathon Project Overview
+## Project Overview
 
 This AVS is designed to facilitate secure, efficient, and transparent smart contract auditing using Zero-Knowledge Proofs (ZKPs) for bid submissions and verifications. This README provides an overview of the AVS design, outlines the roles of AVS clients, operators, aggregators and auditors, the phases of development, and the use of ZKPs to ensure a secure and fair auditing process.
 
